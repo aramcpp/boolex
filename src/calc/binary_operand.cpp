@@ -4,19 +4,18 @@
 
 binary_operand::binary_operand()
 {
-    // TODO: add implemantation
+    this->bin = binary_repr();
 }
 
 binary_operand::binary_operand(const binary_operand &src)
 {
-    // TODO: add implemantation
+    this->bin = binary_repr(src.bin);
 }
 
 binary_operand::binary_operand(const string &src)
 {
-    // TODO: add implemantation
+   this->bin = binary_repr(src.begin(), src.end());
 }
-
 // operators
 
 binary_operand binary_operand::op_not()
