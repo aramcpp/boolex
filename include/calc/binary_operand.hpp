@@ -1,5 +1,5 @@
-#ifndef CALC_BINARY_OPERAND_H
-#define CALC_BINARY_OPERAND_H
+#ifndef CALC_BINARY_OPERAND_HPP
+#define CALC_BINARY_OPERAND_HPP
 
 #include <global.hpp>
 #include <util/binary_repr.hpp>
@@ -11,6 +11,7 @@ public:
     binary_operand();
     binary_operand(const binary_operand&);
     binary_operand(const string&);
+    binary_operand(const binary_repr&);
 
 
     binary_operand op_not();
@@ -26,4 +27,4 @@ private:
     binary_repr bin;
 };
 
-#endif // CALC_BINARY_OPERAND_H
+#endif // CALC_BINARY_OPERAND_HPP

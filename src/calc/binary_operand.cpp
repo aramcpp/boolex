@@ -16,6 +16,12 @@ binary_operand::binary_operand(const string &src)
 {
    this->bin = binary_repr(src.begin(), src.end());
 }
+
+binary_operand::binary_operand(const binary_repr &src)
+{
+    this->bin = binary_repr(src);
+}
+
 // operators
 
 binary_operand binary_operand::op_not()

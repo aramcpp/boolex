@@ -1,5 +1,3 @@
-implement constructors of class binary_operand [priority HIGH, assignee Robert]
-
 create tests for all methods of the binary_operand class [priority HIGH, assignee Robert]
 
 create class for Shunting Yard algorithm and implement its functionality [priority HIGH, assignee Aram M.]

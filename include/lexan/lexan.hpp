@@ -1,5 +1,5 @@
-#ifndef LEXAN_H
-#define LEXAN_H
+#ifndef LEXAN_HPP
+#define LEXAN_HPP
 
 #include <global.hpp>
 #include <util/token.hpp>
@@ -7,11 +7,13 @@
 class lexan
 {
 public:
-    lexan(cosnt string&);
+    lexan(const string&);
     
     token_list parse();
 private:
-    string inp;
-}
+    bool is_op(char);
 
-#endif // LEXAN_H
+    string inp;
+};
+
+#endif // LEXAN_HPP
