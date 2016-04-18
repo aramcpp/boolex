@@ -6,12 +6,19 @@
 #include <stack>
 #include <map>
 #include <exception>
+#include <utility> //std::pair
+#include <locale>
 
 using std::string;
 using std::vector;
 using std::stack;
 using std::map;
 using std::exception;
+using std::pair;
+
+using std::tolower;
+using std::isalpha;
+using std::isupper;
 
 enum class token_type {
     VAR,

@@ -7,7 +7,7 @@
 class token
 {
 public:
-    token(token_type, char);
+    token(token_type, char _var=0);
     
     token_type get_type();
     
@@ -30,9 +30,11 @@ private:
 
 typedef vector<token> token_list;
 
-extern map<size_t, token> char2tok;
+extern map<char, token> char2tok;
 
-const size_t char2tok_op_start = 10;
+extern map<token, char> tok2char;
+
+const size_t char2tok_op_base = 10;
 const size_t char2tok_op_count = 8;
 
 #endif // UTIL_TOKEN_HPP

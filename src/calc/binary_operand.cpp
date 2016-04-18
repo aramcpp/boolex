@@ -1,4 +1,5 @@
 #include <calc/binary_operand.hpp>
+#include <iostream>
 
 // constructors
 
@@ -14,7 +15,12 @@ binary_operand::binary_operand(const binary_operand &src)
 
 binary_operand::binary_operand(const string &src)
 {
-   this->bin = binary_repr(src.begin(), src.end());
+    this->bin = binary_repr(src.length());
+    
+    for(size_t i = 0; i < src.length(); ++i)
+    {
+        this->bin[i] = src[i] - '0';
+    }
 }
 
 binary_operand::binary_operand(const binary_repr &src)
@@ -29,7 +35,6 @@ binary_operand binary_operand::op_not()
     binary_operand new_value;
     
     new_value.bin = binary_repr(this->bin.size());
-    
     for (size_t i = 0 ; i < bin.size(); ++i)
     {
         new_value.bin[i] = !bin[i];
@@ -90,4 +95,18 @@ binary_operand binary_operand::op_sheffer(binary_operand val)
 binary_operand binary_operand::op_pierce(binary_operand val)
 {
     return this->op_or(val).op_not();
+}
+
+
+
+string binary_operand::to_string()
+{
+    string s;
+    
+    for (binary_repr::iterator it = this->bin.begin(); it != this->bin.end(); it++)
+    {
+        s += *it + '0';
+    }
+    
+    return s;
 }

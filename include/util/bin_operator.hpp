@@ -1,5 +1,5 @@
-#ifndef UTIL_BIN_OPERATORS_HPP
-#define UTIL_BIN_OPERATORS_HPP
+#ifndef UTIL_BIN_OPERATOR_HPP
+#define UTIL_BIN_OPERATOR_HPP
 
 #include <global.hpp>
 
@@ -20,4 +20,4 @@ private:
     token_type op;
 };
 
-#endif // UTIL_BIN_OPERATORS_HPP
+#endif // UTIL_BIN_OPERATOR_HPP

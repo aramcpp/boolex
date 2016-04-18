@@ -8,12 +8,14 @@ class shunting_yard
 {
 public:
     shunting_yard();
-    shunting_yard(token_list&);
+    shunting_yard(const token_list&);
+    
     token_list transform();
     
 private:
     int get_priority(token_type op);
-     token_list in;
+    
+    token_list in;
 };
 
 

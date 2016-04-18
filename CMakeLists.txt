@@ -6,6 +6,8 @@ project(boolex CXX)
 # gcc flag for compiling c++11
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ggdb")
+
 include_directories("include")
 
 # source files of calc part
@@ -39,6 +41,10 @@ add_library(lexan OBJECT ${boolex_lexan_src})
 
 add_executable(boolex ${boolex_src})
 
+add_executable(lexan_test test/lexan/lexan_test.cpp ${boolex_lexan_src} ${boolex_util_src})
+
 add_executable(shunting_yard_test test/shunting_yard/shunting_yard_test.cpp ${boolex_shunting_yard_src} ${boolex_util_src})
 
 add_executable(calc_test test/calc/binary_operand_test.cpp ${boolex_calc_src} ${boolex_util_src})
+
+add_executable(boolex_test test/boolex_test.cpp ${boolex_calc_src} ${boolex_lexan_src} ${boolex_shunting_yard_src} ${boolex_util_src})

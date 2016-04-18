@@ -1,5 +1,5 @@
-#ifndef LEXAN_HPP
-#define LEXAN_HPP
+#ifndef LEXAN_LEXAN_HPP
+#define LEXAN_LEXAN_HPP
 
 #include <global.hpp>
 #include <util/token.hpp>
@@ -11,9 +11,12 @@ public:
     
     token_list parse();
 private:
+    string preprocess();
     bool is_op(char);
+    bool is_brace(char);
+    bool is_space(char);
 
     string inp;
 };
 
-#endif // LEXAN_HPP
+#endif // LEXAN_LEXAN_HPP
