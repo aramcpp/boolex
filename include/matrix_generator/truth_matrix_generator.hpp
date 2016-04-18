@@ -3,6 +3,7 @@
 
 #include <global.hpp>
 #include <util/token.hpp>
+#include <calc/binary_operand.hpp>
 
 struct matrix_column
 {
@@ -20,13 +21,16 @@ typedef vector<matrix_column> truth_matrix;
 class truth_matrix_generator
 {
 public:
-    truth_matrix_generator();
+    truth_matrix_generator(size_t);
     
-    void add_column(binary_operand);
+    void add_var(char, const binary_operand&);
+    
+    void add_column(const matrix_column&);
     
     truth_matrix get_matrix();
 private:
     truth_matrix matrix;
+    size_t size;
 };
 
 #endif // MATRIX_GENERATOR_TRUTH_MATRIX_GENERATOR_HPP

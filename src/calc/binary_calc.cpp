@@ -65,6 +65,8 @@ binary_operand binary_calc::eval()
     create_vars();
     
     stack<bcalc_item> st;
+    size_t count = get_vars_count();
+    truth_matrix_generator(count);
     
     int op_index = 1;
     
@@ -77,6 +79,8 @@ binary_operand binary_calc::eval()
                 no_index,
                 vars[cur.get_var_name() - 'a'],
             });
+            matrix.add(st.top());
+            continue;
         }
         
         binary_operand op1, op2;
@@ -92,13 +96,22 @@ binary_operand binary_calc::eval()
                 
                 stringstream ss;
                 
+                ss << char(char2tok_base + 0) << ""
+               
                 if (op1.op_index != bcalc_item::no_index)
                 {
-                    ss << char(char2tok_base + 0) << ""
+                    index = 1;
+                    ss << op1.get_var_name();
+                }
+                else {
+                    index = op1.op_index+1;
+                    ss << index;
                 }
                 
+                
                 st.push({
-                    
+                    ss,
+                    index,
                     op1.op_not()
                 });
                 
@@ -106,6 +119,20 @@ binary_operand binary_calc::eval()
             }
             else if(cur.get_op() == token_type::AND)
             {
+               op1 = st.top();
+               st.pop();
+               op2 = st.top();
+               st.pop();
+               
+               
+                
+                
+                
+                
+                
+                
+                
+                
                 op1 = st.top();
                 st.pop();
                 op2 = st.top();
